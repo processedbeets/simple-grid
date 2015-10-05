@@ -1,0 +1,29 @@
+{
+  "name": "simple-grid",
+  "version": "1.0.0",
+  "description": "An editable HTML table. Wrapping around two libraries Datatables (https://datatables.net/) & editableTable (https://github.com/mindmup/editable-table)",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/processedbeets/simple-grid.git"
+  },
+  "keywords": [
+    "editable-table",
+    "editable",
+    "table",
+    "html",
+    "table"
+  ],
+  "author": "David Douglas Anderson <david.douglas.anderson@gmail.com> (https://github.com/processedbeets)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/processedbeets/simple-grid/issues"
+  },
+  "homepage": "https://github.com/processedbeets/simple-grid#readme"
+}
