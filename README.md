@@ -88,28 +88,28 @@ var table = $('#tableId').simpleGrid({
 - **definition** object (*{  }*): this is used exclusively for the dataTables initialisation object. For further details, consult [dataTables.net](http://datatables.net/examples/basic_init/index.html). By default, there are a number of values passed in to the dataTables initialisation. These can be overridden per instance by passing in values here, or by  stepping into the simpleGrid.js file and altering the defaults specified at the bottom.
 - **hiddenColumns** string[] (*[]*): an array of column names that should initially be hidden.
 - **hiddenRows** string[] (*[]*): an array of class selectors that, when matched to classes found on on *<tbody><tr>* elements, will initially set them to be hidden.
-    ```bash
-    hiddenRows: [
-        ".class1",
-        ".class2",
-        ".class7"
-    ],
-    ```
+```bash
+hiddenRows: [
+    ".class1",
+    ".class2",
+    ".class7"
+],
+```
 - **noFilters** string[] (*[]*): by default, column filters will be added to each column, not matching ["View", "Edit", "Delete"]. This option allows for additional columns to be excluded from the column filtering, i.e. no filter box will appear above that column.
 - **orderColumns** [][colName: "asc" | "desc"] (*[]*): an array of order arrays. Multiple order arrays can be specified. Data will first be sorted by the order specified in the orderColumns array, position zero. Additional sorting will be applied in turn, in the order specified in this array. In the abscence of this option, data will automatically be sorted by the column in position zero, in ascending order. 
-    ```bash
-    orderColumns: [
-        ["col7", "desc"],
-        ["col3", "asc"]
-    ]
-    ```
+```bash
+orderColumns: [
+    ["col7", "desc"],
+    ["col3", "asc"]
+]
+```
 - **selectFilters** string[] (*[]*): a column filter will default to an *<input>* element, however, this can be made to be a *<select>* element populated with all the values that exist in the current dataset, for that column. Simply add the column names this should apply to.
-    ```bash
-    selectFilters: [
-        "col4",
-        "col8"
-    ]
-    ```
+```bash
+selectFilters: [
+    "col4",
+    "col8"
+]
+```
 - **show** bool (*true*): will the dataTable be active 
 - **tableOnly** bool (*false*): this option is used in conjunction with *tableOnlyDef* and allows for a second 'table only' layout to be applied. This can strip everything such as paging, searching, and column visibility buttons from the layout. Only the table will be displayed.
 - **tableOnlyDef** string (*'t'*): In some instances you may wish to show only a table with paging. This can be achieved by setting this option and setting the *tableOnly* option to true. Please consult the [dataTables](https://datatables.net/reference/option/dom) documentation on details for setting the dataTables dom option.
@@ -131,13 +131,13 @@ var table = $('#tableId').simpleGrid({
 - **definition** object:  
     - **callback** function (*undefined*): used in conjunction with the *url* property. This function will be called after a successful postback. Suggestions might involve some form of success toaster.
     - **columns** {string: string} (*undefined*): Marries up the column names with the column types
-       ```bash
-       columns: {
-            "col1": "typeDate1",
-            "col2": "typeMultiline1",
-            "col14": "typeDate1"
-        }
-       ```
+```bash
+columns: {
+    "col1": "typeDate1",
+    "col2": "typeMultiline1",
+    "col14": "typeDate1"
+}
+```
     - **defaultOptions** object (*see below*)
       - **cloneProperties** string[] (*['padding', 'padding-top', 'padding-bottom', 'padding-left', 'padding-right', 'text-align', 'font', 'font-size', 'font-family', 'font-weight']*): a list of CSS properties that will be cloned from the cell to the editor.
       - **editor** string (*'<input>'*): the default editor shown if none are explicitly specified
@@ -145,28 +145,28 @@ var table = $('#tableId').simpleGrid({
     - **types** {object} (*undefined*):
       - **column type** object (*undefined*): the object used to define a non-standard (non-textbox) editor for a column. This can be defined once and reused on multiple columns in the columns collection defined above.
         - **type** string (*undefined*): by default, if a column has not been assigned a type, it will default to a standard html *input* or 'textbox'. Other types are available and must match these names, i.e. written in all lowercase. Additional properties specific to each type have been detailed below, however, when specifying these, they should be set at the same level as the type:
-            ```bash
-                definition: {
-                    types: {
-                        "aType": {
-                            type: "dropdown",
-                            sort: $.editableTable.dropdownSort.TEXT,
-                            source: [ "Value 1", "Value 2", "Value 3" ]
-                        },
-                        "anotherType": {
-                            type: "multiline"
-                        },
-                        "yetAnotherType": {
-                            type: "date",
-                            fixedDayOfMonth: 1
-                        },
-                        "stillAType": {
-                            type: "autocomplete",
-                            url: "/someArea/api/GetAutoCompleteData"
-                        }
-                    }     
-                }
-            ```
+```bash
+    definition: {
+        types: {
+            "aType": {
+                type: "dropdown",
+                sort: $.editableTable.dropdownSort.TEXT,
+                source: [ "Value 1", "Value 2", "Value 3" ]
+            },
+            "anotherType": {
+                type: "multiline"
+            },
+            "yetAnotherType": {
+                type: "date",
+                fixedDayOfMonth: 1
+            },
+            "stillAType": {
+                type: "autocomplete",
+                url: "/someArea/api/GetAutoCompleteData"
+            }
+        }     
+    }
+```
           - **autocomplete** (*<input>*): utilises the *typeahead* library
             - **url** string (*undefined*): a url to return a string[] of lookup values
           - **date** (*<input>*)
@@ -176,39 +176,39 @@ var table = $('#tableId').simpleGrid({
           - **dropdown** (*<select>*)
             - **source** object | string[] (*undefined*): For an object, each element should be of the form "Id": "Display Value". This will create an html *select* element, with each option's *value* attribute being assigned the *"Id"* property name and the option contents being assigned the *"Display Value"*. A string array can also be accepted. This will assign the value attribute the index position in the array (zero-based index). The option contents will be assigned to the array text value. 
               - **object**
-                  ```bash
-                    {
-                        "1": "Value 1",
-                        "2": "Value 2",
-                        "3": "Value 3"
-                    }
-                  ```
+```bash
+{
+    "1": "Value 1",
+    "2": "Value 2",
+    "3": "Value 3"
+}
+```
               - **string[]**
-                  ```bash
-                    [
-                        "Value 1",
-                        "Value 2",
-                        "Value 3"
-                    ]
-                  ```
+```bash
+[
+    "Value 1",
+    "Value 2",
+    "Value 3"
+]
+```
             - **sort** dropdownSort (*dropdownSort.TEXT*) [NONE | ID | TEXT]: used to specify the order that options within the select will be sorted.
           - **multiline** (*<textarea>*)
     - **url** string (*undefined*):  URL accepting an Ajax HTTP POST. Allows for immediate posting of each cell update, as it is made. An object is constructed using the *name* attribute of the *<td>* or respective *<thead><th>* cell as a property and the value being assigned the trimmed text contents of the cell. In addition, any data attributes are serialised and included.
-        ```bash
-        <td name="percentage"
-            data-projectid="4"
-            data-personid="5">
-            57
-        </td>
-        ```
+```bash
+<td name="percentage"
+    data-projectid="4"
+    data-personid="5">
+    57
+</td>
+```
         Results in the following object being posted:
-        ```bash
-        {
-          "percentage": 57,
-          "projectid": 4,
-          "personid": 5
-        }
-        ```
+```bash
+{
+  "percentage": 57,
+  "projectid": 4,
+  "personid": 5
+}
+```
 
 ###### Exposed constant object
 - **dropdownSort** object ({
@@ -243,62 +243,62 @@ var table = $('#tableId').simpleGrid({
 ### Methods
 
 - **EditedRows** (*wrapperObject: string*) returns *object[]* : This uses the *editedClass* & *deletedClass* properties and determines which rows have these assigned. This indicates which rows will be included. Rows to be deleted will be assigned the property:
-    ```bash
-    ToDelete: true
-    ```
+```bash
+ToDelete: true
+```
     Returns
-    ```bash
-    [
-        {
+```bash
+[
+    {
+        Col1: "25",
+        Col2: "someName",
+        Col3: "Active",
+        ToDelete: false
+    },
+    {
+        Col1: "23",
+        Col2: "someOtherName",
+        Col3: "Active",
+        ToDelete: true
+    }
+]
+```
+    The *wrapperObject* allows each row object to be wrapped in a further object.
+```bash
+[
+    {
+        wrapper: {
             Col1: "25",
             Col2: "someName",
             Col3: "Active",
             ToDelete: false
-        },
-        {
+        }
+    },
+    {
+        wrapper: {
             Col1: "23",
             Col2: "someOtherName",
             Col3: "Active",
             ToDelete: true
         }
-    ]
-    ```
-    The *wrapperObject* allows each row object to be wrapped in a further object.
-    ```bash
-    [
-        {
-            wrapper: {
-                Col1: "25",
-                Col2: "someName",
-                Col3: "Active",
-                ToDelete: false
-            }
-        },
-        {
-            wrapper: {
-                Col1: "23",
-                Col2: "someOtherName",
-                Col3: "Active",
-                ToDelete: true
-            }
-        }
-    ]
-    ```
+    }
+]
+```
 - **ToggleRows**(*selector: string*): Only show rows matching the given filter. This is a jQuery selector so can include comma separated values.
-    ```bash
-        var tbl = $('#tableId').simpleGrid();
-        tbl.ToggleRows('.class1,.class2,.class5');
-    ```
+```bash
+    var tbl = $('#tableId').simpleGrid();
+    tbl.ToggleRows('.class1,.class2,.class5');
+```
 - **ToggleColumnByName**(*colName: string, makeVisible: bool*): toggle a column containing the given column name
-    ```bash
-        var tbl = $('#tableId').simpleGrid();
-        tbl.ToggleColumnByName('colName1', false);
-    ```
+```bash
+    var tbl = $('#tableId').simpleGrid();
+    tbl.ToggleColumnByName('colName1', false);
+```
 - **ToggleColumnByClass**(*className: string, makeVisible: bool*): toggle a column containing the given class
-    ```bash
-        var tbl = $('#tableId').simpleGrid();
-        tbl.ToggleColumnByClass('class1', true);
-    ```
+```bash
+    var tbl = $('#tableId').simpleGrid();
+    tbl.ToggleColumnByClass('class1', true);
+```
 
 Questions?
 ----------
