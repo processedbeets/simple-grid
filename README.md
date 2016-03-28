@@ -139,7 +139,7 @@ var table = $('#tableId').simpleGrid({
 		- **column type** object (*undefined*): the object used to define a non-standard (non-textbox) editor for a column. This can be defined once and reused on multiple columns in the columns collection defined above.
 		- **type** string (*undefined*): by default, if a column has not been assigned a type, it will default to a standard html *input* or 'textbox'. Other types are available and must match these names, i.e. written in all lowercase. Additional properties specific to each type have been detailed below, however, when specifying these, they should be set at the same level as the type:
 		
-```javascript
+`javascript
     definition: {
         types: {
             "aType": {
@@ -160,10 +160,7 @@ var table = $('#tableId').simpleGrid({
             }
         }     
     }
-```
--
-	-
-		-
+`
 			- **autocomplete** (*&lt;input&gt;*): utilises the *typeahead* library
 				- **url** string (*undefined*): a url to return a string[] of lookup values
 			- **date** (*&lt;input&gt;*)
