@@ -96,14 +96,14 @@ hiddenRows: [
 ],
 ```
 - **noFilters** string[] (*[]*): by default, column filters will be added to each column, not matching ["View", "Edit", "Delete"]. This option allows for additional columns to be excluded from the column filtering, i.e. no filter box will appear above that column.
-- **orderColumns** [][colName: "asc" | "desc"] (*[]*): an array of order arrays. Multiple order arrays can be specified. Data will first be sorted by the order specified in the orderColumns array, position zero. Additional sorting will be applied in turn, in the order specified in this array. In the abscence of this option, data will automatically be sorted by the column in position zero, in ascending order. 
+- **orderColumns** [[colName: "asc" | "desc"]] (*[]*): an array of order arrays. Multiple order arrays can be specified. Data will first be sorted by the order specified in the orderColumns array, position zero. Additional sorting will be applied in turn, in the order specified in this array. In the abscence of this option, data will automatically be sorted by the column in position zero, in ascending order. 
 ```bash
 orderColumns: [
     ["col7", "desc"],
     ["col3", "asc"]
 ]
 ```
-- **selectFilters** string[] (*[]*): a column filter will default to an *<input>* element, however, this can be made to be a *<select>* element populated with all the values that exist in the current dataset, for that column. Simply add the column names this should apply to.
+- **selectFilters** string[] *[]*: a column filter will default to an *<input>* element, however, this can be made to be a *<select>* element populated with all the values that exist in the current dataset, for that column. Simply add the column names this should apply to.
 ```bash
 selectFilters: [
     "col4",
