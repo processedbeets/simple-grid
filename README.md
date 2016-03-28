@@ -161,7 +161,9 @@ var table = $('#tableId').simpleGrid({
         }     
     }
 ```
-
+-
+	-
+		-
 			- **autocomplete** (*&lt;input&gt;*): utilises the *typeahead* library
 				- **url** string (*undefined*): a url to return a string[] of lookup values
 			- **date** (*&lt;input&gt;*)
