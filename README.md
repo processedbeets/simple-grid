@@ -138,7 +138,7 @@ columns: {
     "col14": "typeDate1"
 }
 ```
-    - **defaultOptions** object (*see below*)
+	- **defaultOptions** object (*see below*)
       - **cloneProperties** string[] (*['padding', 'padding-top', 'padding-bottom', 'padding-left', 'padding-right', 'text-align', 'font', 'font-size', 'font-family', 'font-weight']*): a list of CSS properties that will be cloned from the cell to the editor.
       - **editor** string (*'&lt;input&gt;'*): the default editor shown if none are explicitly specified
     - **editorsMaxWidth** bool (*true*): forces editors to consume the entire width of the cell. In some instances of larger screens and very few columns, column widths can be large, and the associated editors may exceed any max width set for that control type.
