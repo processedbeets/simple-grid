@@ -43,7 +43,10 @@ We can then bring in different modules to bring various pieces of functionality:
 -  **numericTable**: Disabled by default, this will provide some additional basic summation capabilities and validation on cells, rejecting any non-numeric characters. 
 
 ### Options
-- **propertyName** `type` (`default value`): description
+
+Form: 
+    **propertyName** `type` (`default value`): description
+
 ##### SimpleGrid
 - **autoAddDeleteBtn** `bool` (`true`): by default, adding a new row, will add a Delete button to the Delete column.  
 - **addRowSelector** `string` (`'.addRow'`): in order to add a new row to the table, an element will have to contain this class.
