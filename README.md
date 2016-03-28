@@ -96,14 +96,14 @@ hiddenRows: [
 ],
 ```
 - **noFilters** string[] (*\[\]*): by default, column filters will be added to each column, not matching ["View", "Edit", "Delete"]. This option allows for additional columns to be excluded from the column filtering, i.e. no filter box will appear above that column.
-- **orderColumns** [\[colName: "asc" | "desc"\]] (*\[\]*): an array of order arrays. Multiple order arrays can be specified. Data will first be sorted by the order specified in the orderColumns array, position zero. Additional sorting will be applied in turn, in the order specified in this array. In the abscence of this option, data will automatically be sorted by the column in position zero, in ascending order. 
+- **orderColumns** \[\[colName: "asc" | "desc"\]\] \(*\[\]*\): an array of order arrays. Multiple order arrays can be specified. Data will first be sorted by the order specified in the orderColumns array, position zero. Additional sorting will be applied in turn, in the order specified in this array. In the abscence of this option, data will automatically be sorted by the column in position zero, in ascending order. 
 ```bash
 orderColumns: [
     ["col7", "desc"],
     ["col3", "asc"]
 ]
 ```
-- **selectFilters** string[] \(*[]*\): a column filter will default to an *&lt;input&gt;* element, however, this can be made to be a *&lt;select&gt;* element populated with all the values that exist in the current dataset, for that column. Simply add the column names this should apply to.
+- **selectFilters** string[] \(*\[\]*\): a column filter will default to an *&lt;input&gt;* element, however, this can be made to be a *&lt;select&gt;* element populated with all the values that exist in the current dataset, for that column. Simply add the column names this should apply to.
 ```bash
 selectFilters: [
     "col4",
@@ -195,11 +195,11 @@ columns: {
           - **multiline** (*&lt;textarea&gt;*)
     - **url** string (*undefined*):  URL accepting an Ajax HTTP POST. Allows for immediate posting of each cell update, as it is made. An object is constructed using the *name* attribute of the *&lt;td&gt;* or respective *&lt;thead&gt;&lt;th&gt;* cell as a property and the value being assigned the trimmed text contents of the cell. In addition, any data attributes are serialised and included.
 ```bash
-&lt;td name="percentage"
+<td name="percentage"
     data-projectid="4"
-    data-personid="5"&gt;
+    data-personid="5">
     57
-&lt;/td&gt;
+</td>
 ```
         Results in the following object being posted:
 ```bash
