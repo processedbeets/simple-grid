@@ -138,6 +138,7 @@ var table = $('#tableId').simpleGrid({
 	- **types** {object} (*undefined*):
 		- **column type** object (*undefined*): the object used to define a non-standard (non-textbox) editor for a column. This can be defined once and reused on multiple columns in the columns collection defined above.
 		- **type** string (*undefined*): by default, if a column has not been assigned a type, it will default to a standard html *input* or 'textbox'. Other types are available and must match these names, i.e. written in all lowercase. Additional properties specific to each type have been detailed below, however, when specifying these, they should be set at the same level as the type:
+		
 ```javascript
     definition: {
         types: {
@@ -160,15 +161,17 @@ var table = $('#tableId').simpleGrid({
         }     
     }
 ```
-      * **autocomplete** (*&lt;input&gt;*): utilises the *typeahead* library
-       * **url** string (*undefined*): a url to return a string[] of lookup values
-      * **date** (*&lt;input&gt;*)
-       * **dateFormat** string (*'DD MMM YYYY'*): allows custome date format to be set
-       * **fixedDayOfMonth** int (*undefined*) [1-31]: allows a specific day to be always be chosen for a given month. For example always picking the 1st of the month chosen.
-       * **timePicker** bool (*false*): toggles time picking component of date picker
-      * **dropdown** (*&lt;select&gt;*)
-       * **source** object | string[] (*undefined*): For an object, each element should be of the form "Id": "Display Value". This will create an html *select* element, with each option's *value* attribute being assigned the *"Id"* property name and the option contents being assigned the *"Display Value"*. A string array can also be accepted. This will assign the value attribute the index position in the array (zero-based index). The option contents will be assigned to the array text value. 
-        * **object**
+
+			- **autocomplete** (*&lt;input&gt;*): utilises the *typeahead* library
+				- **url** string (*undefined*): a url to return a string[] of lookup values
+			- **date** (*&lt;input&gt;*)
+				- **dateFormat** string (*'DD MMM YYYY'*): allows custome date format to be set
+				- **fixedDayOfMonth** int (*undefined*) [1-31]: allows a specific day to be always be chosen for a given month. For example always picking the 1st of the month chosen.
+				- **timePicker** bool (*false*): toggles time picking component of date picker
+			- **dropdown** (*&lt;select&gt;*)
+				- **source** object | string[] (*undefined*): For an object, each element should be of the form "Id": "Display Value". This will create an html *select* element, with each option's *value* attribute being assigned the *"Id"* property name and the option contents being assigned the *"Display Value"*. A string array can also be accepted. This will assign the value attribute the index position in the array (zero-based index). The option contents will be assigned to the array text value. 
+					- **object**
+					
 ```javascript
 {
     "1": "Value 1",
@@ -176,7 +179,9 @@ var table = $('#tableId').simpleGrid({
     "3": "Value 3"
 }
 ```
-        * **string[]**
+
+					- **string[]**
+					
 ```javascript
 [
     "Value 1",
@@ -184,9 +189,11 @@ var table = $('#tableId').simpleGrid({
     "Value 3"
 ]
 ```
-       * **sort** dropdownSort (*dropdownSort.TEXT*) [NONE | ID | TEXT]: used to specify the order that options within the select will be sorted.
-      * **multiline** (*&lt;textarea&gt;*)
-     * **url** string (*undefined*):  URL accepting an Ajax HTTP POST. Allows for immediate posting of each cell update, as it is made. An object is constructed using the *name* attribute of the *&lt;td&gt;* or respective *&lt;thead&gt;&lt;th&gt;* cell as a property and the value being assigned the trimmed text contents of the cell. In addition, any data attributes are serialised and included.
+
+				- **sort** dropdownSort (*dropdownSort.TEXT*) [NONE | ID | TEXT]: used to specify the order that options within the select will be sorted.
+			- **multiline** (*&lt;textarea&gt;*)
+	- **url** string (*undefined*):  URL accepting an Ajax HTTP POST. Allows for immediate posting of each cell update, as it is made. An object is constructed using the *name* attribute of the *&lt;td&gt;* or respective *&lt;thead&gt;&lt;th&gt;* cell as a property and the value being assigned the trimmed text contents of the cell. In addition, any data attributes are serialised and included.
+	
 ```javascript
 <td name="percentage"
     data-projectid="4"
@@ -194,7 +201,9 @@ var table = $('#tableId').simpleGrid({
     57
 </td>
 ```
+
         Results in the following object being posted:
+		
 ```javascript
 {
   "percentage": 57,
