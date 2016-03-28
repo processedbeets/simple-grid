@@ -84,10 +84,10 @@ var table = $('#tableId').simpleGrid({
     }
 });
 ```
-- **checkboxColumns** string[] (*[]*): denotes columns that should contain a checkbox. This ensures a checkbox *&lt;input&gt;* is added automatically for checkbox columns when a new row is added.
+- **checkboxColumns** string[] (*\[\]*): denotes columns that should contain a checkbox. This ensures a checkbox *&lt;input&gt;* is added automatically for checkbox columns when a new row is added.
 - **definition** object (*{  }*): this is used exclusively for the dataTables initialisation object. For further details, consult [dataTables.net](http://datatables.net/examples/basic_init/index.html). By default, there are a number of values passed in to the dataTables initialisation. These can be overridden per instance by passing in values here, or by  stepping into the simpleGrid.js file and altering the defaults specified at the bottom.
-- **hiddenColumns** string[] (*[]*): an array of column names that should initially be hidden.
-- **hiddenRows** string[] (*[]*): an array of class selectors that, when matched to classes found on on *&lt;tbody&gt;&lt;tr&gt;* elements, will initially set them to be hidden.
+- **hiddenColumns** string[] (*\[\]*): an array of column names that should initially be hidden.
+- **hiddenRows** string[] (*\[\]*): an array of class selectors that, when matched to classes found on on *&lt;tbody&gt;&lt;tr&gt;* elements, will initially set them to be hidden.
 ```bash
 hiddenRows: [
     ".class1",
@@ -95,8 +95,8 @@ hiddenRows: [
     ".class7"
 ],
 ```
-- **noFilters** string[] (*[]*): by default, column filters will be added to each column, not matching ["View", "Edit", "Delete"]. This option allows for additional columns to be excluded from the column filtering, i.e. no filter box will appear above that column.
-- **orderColumns** [[colName: "asc" | "desc"]] (*[]*): an array of order arrays. Multiple order arrays can be specified. Data will first be sorted by the order specified in the orderColumns array, position zero. Additional sorting will be applied in turn, in the order specified in this array. In the abscence of this option, data will automatically be sorted by the column in position zero, in ascending order. 
+- **noFilters** string[] (*\[\]*): by default, column filters will be added to each column, not matching ["View", "Edit", "Delete"]. This option allows for additional columns to be excluded from the column filtering, i.e. no filter box will appear above that column.
+- **orderColumns** [\[colName: "asc" | "desc"\]] (*\[\]*): an array of order arrays. Multiple order arrays can be specified. Data will first be sorted by the order specified in the orderColumns array, position zero. Additional sorting will be applied in turn, in the order specified in this array. In the abscence of this option, data will automatically be sorted by the column in position zero, in ascending order. 
 ```bash
 orderColumns: [
     ["col7", "desc"],
@@ -104,16 +104,16 @@ orderColumns: [
 ]
 ```
 - **selectFilters** string[] \(*[]*\): a column filter will default to an *&lt;input&gt;* element, however, this can be made to be a *&lt;select&gt;* element populated with all the values that exist in the current dataset, for that column. Simply add the column names this should apply to.
-`
+```bash
 selectFilters: [
     "col4",
     "col8"
 ]
-`
+```
 - **show** bool (*true*): will the dataTable be active 
 - **tableOnly** bool (*false*): this option is used in conjunction with *tableOnlyDef* and allows for a second 'table only' layout to be applied. This can strip everything such as paging, searching, and column visibility buttons from the layout. Only the table will be displayed.
 - **tableOnlyDef** string (*'t'*): In some instances you may wish to show only a table with paging. This can be achieved by setting this option and setting the *tableOnly* option to true. Please consult the [dataTables](https://datatables.net/reference/option/dom) documentation on details for setting the dataTables dom option.
-- **visibleColumns** string[] (*[]*): this is the inverse of the hiddenColumns option above. On occasion, the number of columns on a table may dictate it to be simpler to specify which columns are visible rather than which columns to hide, initially.
+- **visibleColumns** string[] (*\[\]*): this is the inverse of the hiddenColumns option above. On occasion, the number of columns on a table may dictate it to be simpler to specify which columns are visible rather than which columns to hide, initially.
 
 ##### EditableTable
 ###### Example
