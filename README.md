@@ -234,10 +234,10 @@ var table = $('#tableId').simpleGrid({
 ```
 - **show** `bool` (`false`): will the numericTable be active 
 - **definition** `object`:  
-    - **blankZeros** `bool` (`false`): when initialising the numericTable, any values of zero will have the `blankZerosClass` added.
+    - **blankZeros** `bool` (`false`): when initialising the `numericTable`, any values of zero will have the `blankZerosClass` added.
     - **blankZerosClass** `string` (`'blank'`): the class that will be added to any zero-valued cells, if the `blankZeros` property is set.
     - **excludeColumnClass** `string` (`'excludeCol'`): a class used on the `<thead><th>` elements to denote columns that should be excluded from any numeric validation
-    - **initTotals** `bool` (`false`): preCalculates the totals on all `totalColumns` and footers. If you already have totals precalculated this can be left switched off.
+    - **initTotals** `bool` (`false`): precalculates the totals on all `totalColumns` and footers. If you already have totals precalculated this can be left switched off.
     - **maxTotalPerTotalColumn** `int` (`99999`): dictates the maximum value accepted in `totalColumns`. If this value is exceeded, the `deletedClass` will be added to the `<td>`.
     - **maxValue** `int` (`99999`):  dictates the maximum value accepted for a single editable cell.  If this value is exceeded, the entry will be rejected.
     - **totalColumnClass** `string` (`totalCol`): a class used on the `<thead><th>` elements to denote columns that should be treated as total columns. A total column is one that is `readonly` and sums the contents of the row (excluding any `excludeColumns`) between either the beginning of the row, or from the last `totalColumn` if another appears closer towards the left hand side.
