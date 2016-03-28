@@ -122,26 +122,7 @@ var table = $('#tableId').simpleGrid({
     editableTable: {
         show: true,
         definition: {
-                 
-        }
-    }
-});
-```
-- **show** bool (*true*): will the editableTable be active 
-- **definition** object:  
-	- **callback** function (*undefined*): used in conjunction with the *url* property. This function will be called after a successful postback. Suggestions might involve some form of success toaster.
-	- **columns** {string: string} (*undefined*): Marries up the column names with the column types
-	- **defaultOptions** object (*see below*)
-		- **cloneProperties** string[] (*['padding', 'padding-top', 'padding-bottom', 'padding-left', 'padding-right', 'text-align', 'font', 'font-size', 'font-family', 'font-weight']*): a list of CSS properties that will be cloned from the cell to the editor.
-		- **editor** string (*'&lt;input&gt;'*): the default editor shown if none are explicitly specified
-	- **editorsMaxWidth** bool (*true*): forces editors to consume the entire width of the cell. In some instances of larger screens and very few columns, column widths can be large, and the associated editors may exceed any max width set for that control type.
-	- **types** {object} (*undefined*):
-		- **column type** object (*undefined*): the object used to define a non-standard (non-textbox) editor for a column. This can be defined once and reused on multiple columns in the columns collection defined above.
-		- **type** string (*undefined*): by default, if a column has not been assigned a type, it will default to a standard html *input* or 'textbox'. Other types are available and must match these names, i.e. written in all lowercase. Additional properties specific to each type have been detailed below, however, when specifying these, they should be set at the same level as the type:
-		
-`javascript
-    definition: {
-        types: {
+            types: {
             "aType": {
                 type: "dropdown",
                 sort: $.editableTable.dropdownSort.TEXT,
@@ -158,9 +139,22 @@ var table = $('#tableId').simpleGrid({
                 type: "autocomplete",
                 url: "/someArea/api/GetAutoCompleteData"
             }
-        }     
+        }          
+        }
     }
-`
+});
+```
+- **show** bool (*true*): will the editableTable be active 
+- **definition** object:  
+	- **callback** function (*undefined*): used in conjunction with the *url* property. This function will be called after a successful postback. Suggestions might involve some form of success toaster.
+	- **columns** {string: string} (*undefined*): Marries up the column names with the column types
+	- **defaultOptions** object (*see below*)
+		- **cloneProperties** string[] (*['padding', 'padding-top', 'padding-bottom', 'padding-left', 'padding-right', 'text-align', 'font', 'font-size', 'font-family', 'font-weight']*): a list of CSS properties that will be cloned from the cell to the editor.
+		- **editor** string (*'&lt;input&gt;'*): the default editor shown if none are explicitly specified
+	- **editorsMaxWidth** bool (*true*): forces editors to consume the entire width of the cell. In some instances of larger screens and very few columns, column widths can be large, and the associated editors may exceed any max width set for that control type.
+	- **types** {object} (*undefined*):
+		- **column type** object (*undefined*): the object used to define a non-standard (non-textbox) editor for a column. This can be defined once and reused on multiple columns in the columns collection defined above.
+		- **type** string (*undefined*): by default, if a column has not been assigned a type, it will default to a standard html *input* or 'textbox'. Other types are available and must match these names, i.e. written in all lowercase. Additional properties specific to each type have been detailed below, however, when specifying these, they should be set at the same level as the type:		
 			- **autocomplete** (*&lt;input&gt;*): utilises the *typeahead* library
 				- **url** string (*undefined*): a url to return a string[] of lookup values
 			- **date** (*&lt;input&gt;*)
@@ -169,25 +163,24 @@ var table = $('#tableId').simpleGrid({
 				- **timePicker** bool (*false*): toggles time picking component of date picker
 			- **dropdown** (*&lt;select&gt;*)
 				- **source** object | string[] (*undefined*): For an object, each element should be of the form "Id": "Display Value". This will create an html *select* element, with each option's *value* attribute being assigned the *"Id"* property name and the option contents being assigned the *"Display Value"*. A string array can also be accepted. This will assign the value attribute the index position in the array (zero-based index). The option contents will be assigned to the array text value. 
-					- **object**
-					
-```javascript
+					- **object**					
+`
 {
     "1": "Value 1",
     "2": "Value 2",
     "3": "Value 3"
 }
-```
+`
 
 					- **string[]**
 					
-```javascript
+`
 [
     "Value 1",
     "Value 2",
     "Value 3"
 ]
-```
+`
 
 				- **sort** dropdownSort (*dropdownSort.TEXT*) [NONE | ID | TEXT]: used to specify the order that options within the select will be sorted.
 			- **multiline** (*&lt;textarea&gt;*)
