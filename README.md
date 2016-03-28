@@ -59,7 +59,7 @@ The option types will be shown after the option, follwed by  the default in roun
 - **markRowEdited** bool (*true*): similar to the *markCellEdited* option, but applies to an entire row. 
 - **newCellContent** string (*'-- New Row --'*): when adding a new row, by default, every cell will be assigned the *newCellContent* value. This can be prevented by editing the *newRowTemplate*.
 - **newRowTemplate** string[] (*undefined*): a string array of new cell values that must match the total number of available columns. *null* must be used for *checkbox* or *Delete* columns.
-```bash
+```javascript
 newRowTemplate: ["", " {NEW ROW} ", "", null],
 ```
 - **primaryKey** string (*undefined*): this works in conjunction with the 'data-id' attribute on the *&lt;tbody&gt;&lt;tr&gt;* and is the name of a column that will be attached to the object returned by *EditedRows()*. This can be omitted if there is no intention of updating data or if the Primary Key is already included as a column in the table.
@@ -74,7 +74,7 @@ newRowTemplate: ["", " {NEW ROW} ", "", null],
 
 ##### DataTable
 ###### Example
-```bash
+```javascript
 var table = $('#tableId').simpleGrid({
     dataTable: {
         show: true,
@@ -88,7 +88,7 @@ var table = $('#tableId').simpleGrid({
 - **definition** object (*{  }*): this is used exclusively for the dataTables initialisation object. For further details, consult [dataTables.net](http://datatables.net/examples/basic_init/index.html). By default, there are a number of values passed in to the dataTables initialisation. These can be overridden per instance by passing in values here, or by  stepping into the simpleGrid.js file and altering the defaults specified at the bottom.
 - **hiddenColumns** string[] (*\[\]*): an array of column names that should initially be hidden.
 - **hiddenRows** string[] (*\[\]*): an array of class selectors that, when matched to classes found on on *&lt;tbody&gt;&lt;tr&gt;* elements, will initially set them to be hidden.
-```bash
+```javascript
 hiddenRows: [
     ".class1",
     ".class2",
@@ -97,14 +97,14 @@ hiddenRows: [
 ```
 - **noFilters** string[] (*\[\]*): by default, column filters will be added to each column, not matching ["View", "Edit", "Delete"]. This option allows for additional columns to be excluded from the column filtering, i.e. no filter box will appear above that column.
 - **orderColumns** \[\[colName: "asc" | "desc"\]\] \(*\[\]*\): an array of order arrays. Multiple order arrays can be specified. Data will first be sorted by the order specified in the orderColumns array, position zero. Additional sorting will be applied in turn, in the order specified in this array. In the abscence of this option, data will automatically be sorted by the column in position zero, in ascending order. 
-```bash
+```javascript
 orderColumns: [
     ["col7", "desc"],
     ["col3", "asc"]
 ]
 ```
 - **selectFilters** string[] \(*\[\]*\): a column filter will default to an *&lt;input&gt;* element, however, this can be made to be a *&lt;select&gt;* element populated with all the values that exist in the current dataset, for that column. Simply add the column names this should apply to.
-```bash
+```javascript
 selectFilters: [
     "col4",
     "col8"
@@ -117,7 +117,7 @@ selectFilters: [
 
 ##### EditableTable
 ###### Example
-```bash
+```javascript
 var table = $('#tableId').simpleGrid({
     editableTable: {
         show: true,
@@ -127,25 +127,25 @@ var table = $('#tableId').simpleGrid({
     }
 });
 ```
-- **show** bool (*true*): will the editableTable be active 
-- **definition** object:  
-    - **callback** function (*undefined*): used in conjunction with the *url* property. This function will be called after a successful postback. Suggestions might involve some form of success toaster.
-    - **columns** {string: string} (*undefined*): Marries up the column names with the column types
-```bash
+* **show** bool (*true*): will the editableTable be active 
+* **definition** object:  
+ * **callback** function (*undefined*): used in conjunction with the *url* property. This function will be called after a successful postback. Suggestions might involve some form of success toaster.
+ * **columns** {string: string} (*undefined*): Marries up the column names with the column types
+```javascript
 columns: {
     "col1": "typeDate1",
     "col2": "typeMultiline1",
     "col14": "typeDate1"
 }
 ```
-	- **defaultOptions** object (*see below*)
-      - **cloneProperties** string[] (*['padding', 'padding-top', 'padding-bottom', 'padding-left', 'padding-right', 'text-align', 'font', 'font-size', 'font-family', 'font-weight']*): a list of CSS properties that will be cloned from the cell to the editor.
-      - **editor** string (*'&lt;input&gt;'*): the default editor shown if none are explicitly specified
-    - **editorsMaxWidth** bool (*true*): forces editors to consume the entire width of the cell. In some instances of larger screens and very few columns, column widths can be large, and the associated editors may exceed any max width set for that control type.
-    - **types** {object} (*undefined*):
-      - **column type** object (*undefined*): the object used to define a non-standard (non-textbox) editor for a column. This can be defined once and reused on multiple columns in the columns collection defined above.
-        - **type** string (*undefined*): by default, if a column has not been assigned a type, it will default to a standard html *input* or 'textbox'. Other types are available and must match these names, i.e. written in all lowercase. Additional properties specific to each type have been detailed below, however, when specifying these, they should be set at the same level as the type:
-```bash
+  * **defaultOptions** object (*see below*)
+   * **cloneProperties** string[] (*['padding', 'padding-top', 'padding-bottom', 'padding-left', 'padding-right', 'text-align', 'font', 'font-size', 'font-family', 'font-weight']*): a list of CSS properties that will be cloned from the cell to the editor.
+   * **editor** string (*'&lt;input&gt;'*): the default editor shown if none are explicitly specified
+  * **editorsMaxWidth** bool (*true*): forces editors to consume the entire width of the cell. In some instances of larger screens and very few columns, column widths can be large, and the associated editors may exceed any max width set for that control type.
+  * **types** {object} (*undefined*):
+   * **column type** object (*undefined*): the object used to define a non-standard (non-textbox) editor for a column. This can be defined once and reused on multiple columns in the columns collection defined above.
+    * **type** string (*undefined*): by default, if a column has not been assigned a type, it will default to a standard html *input* or 'textbox'. Other types are available and must match these names, i.e. written in all lowercase. Additional properties specific to each type have been detailed below, however, when specifying these, they should be set at the same level as the type:
+```javascript
     definition: {
         types: {
             "aType": {
@@ -167,34 +167,34 @@ columns: {
         }     
     }
 ```
-          - **autocomplete** (*&lt;input&gt;*): utilises the *typeahead* library
-            - **url** string (*undefined*): a url to return a string[] of lookup values
-          - **date** (*&lt;input&gt;*)
-            - **dateFormat** string (*'DD MMM YYYY'*): allows custome date format to be set
-            - **fixedDayOfMonth** int (*undefined*) [1-31]: allows a specific day to be always be chosen for a given month. For example always picking the 1st of the month chosen.
-            - **timePicker** bool (*false*): toggles time picking component of date picker
-          - **dropdown** (*&lt;select&gt;*)
-            - **source** object | string[] (*undefined*): For an object, each element should be of the form "Id": "Display Value". This will create an html *select* element, with each option's *value* attribute being assigned the *"Id"* property name and the option contents being assigned the *"Display Value"*. A string array can also be accepted. This will assign the value attribute the index position in the array (zero-based index). The option contents will be assigned to the array text value. 
-              - **object**
-```bash
+      * **autocomplete** (*&lt;input&gt;*): utilises the *typeahead* library
+       * **url** string (*undefined*): a url to return a string[] of lookup values
+      * **date** (*&lt;input&gt;*)
+       * **dateFormat** string (*'DD MMM YYYY'*): allows custome date format to be set
+       * **fixedDayOfMonth** int (*undefined*) [1-31]: allows a specific day to be always be chosen for a given month. For example always picking the 1st of the month chosen.
+       * **timePicker** bool (*false*): toggles time picking component of date picker
+      * **dropdown** (*&lt;select&gt;*)
+       * **source** object | string[] (*undefined*): For an object, each element should be of the form "Id": "Display Value". This will create an html *select* element, with each option's *value* attribute being assigned the *"Id"* property name and the option contents being assigned the *"Display Value"*. A string array can also be accepted. This will assign the value attribute the index position in the array (zero-based index). The option contents will be assigned to the array text value. 
+        * **object**
+```javascript
 {
     "1": "Value 1",
     "2": "Value 2",
     "3": "Value 3"
 }
 ```
-              - **string[]**
-```bash
+        * **string[]**
+```javascript
 [
     "Value 1",
     "Value 2",
     "Value 3"
 ]
 ```
-            - **sort** dropdownSort (*dropdownSort.TEXT*) [NONE | ID | TEXT]: used to specify the order that options within the select will be sorted.
-          - **multiline** (*&lt;textarea&gt;*)
-    - **url** string (*undefined*):  URL accepting an Ajax HTTP POST. Allows for immediate posting of each cell update, as it is made. An object is constructed using the *name* attribute of the *&lt;td&gt;* or respective *&lt;thead&gt;&lt;th&gt;* cell as a property and the value being assigned the trimmed text contents of the cell. In addition, any data attributes are serialised and included.
-```bash
+       * **sort** dropdownSort (*dropdownSort.TEXT*) [NONE | ID | TEXT]: used to specify the order that options within the select will be sorted.
+      * **multiline** (*&lt;textarea&gt;*)
+     * **url** string (*undefined*):  URL accepting an Ajax HTTP POST. Allows for immediate posting of each cell update, as it is made. An object is constructed using the *name* attribute of the *&lt;td&gt;* or respective *&lt;thead&gt;&lt;th&gt;* cell as a property and the value being assigned the trimmed text contents of the cell. In addition, any data attributes are serialised and included.
+```javascript
 <td name="percentage"
     data-projectid="4"
     data-personid="5">
@@ -202,7 +202,7 @@ columns: {
 </td>
 ```
         Results in the following object being posted:
-```bash
+```javascript
 {
   "percentage": 57,
   "projectid": 4,
@@ -220,7 +220,7 @@ columns: {
 ##### NumericTable
 Values are validated upon entry and only numeric characters, decimal points, and dollar ($) or pound (£) signs will be accepted.
 ###### Example
-```bash
+```javascript
 var table = $('#tableId').simpleGrid({
     numericTable: {
         show: true,
@@ -243,11 +243,11 @@ var table = $('#tableId').simpleGrid({
 ### Methods
 
 - **EditedRows** (*wrapperObject: string*) returns *object[]* : This uses the *editedClass* & *deletedClass* properties and determines which rows have these assigned. This indicates which rows will be included. Rows to be deleted will be assigned the property:
-```bash
+```javascript
 ToDelete: true
 ```
     Returns
-```bash
+```javascript
 [
     {
         Col1: "25",
@@ -264,7 +264,7 @@ ToDelete: true
 ]
 ```
     The *wrapperObject* allows each row object to be wrapped in a further object.
-```bash
+```javascript
 [
     {
         wrapper: {
@@ -285,17 +285,17 @@ ToDelete: true
 ]
 ```
 - **ToggleRows**(*selector: string*): Only show rows matching the given filter. This is a jQuery selector so can include comma separated values.
-```bash
+```javascript
     var tbl = $('#tableId').simpleGrid();
     tbl.ToggleRows('.class1,.class2,.class5');
 ```
 - **ToggleColumnByName**(*colName: string, makeVisible: bool*): toggle a column containing the given column name
-```bash
+```javascript
     var tbl = $('#tableId').simpleGrid();
     tbl.ToggleColumnByName('colName1', false);
 ```
 - **ToggleColumnByClass**(*className: string, makeVisible: bool*): toggle a column containing the given class
-```bash
+```javascript
     var tbl = $('#tableId').simpleGrid();
     tbl.ToggleColumnByClass('class1', true);
 ```
