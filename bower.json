@@ -2,7 +2,6 @@
   "name": "simple-grid",
   "dependencies": {
     "jquery": "~2.1.4",
-    "datatables": "~1.10.9",
-    "editable-table": "https://github.com/processedbeets/editable-table"
+    "datatables": "~1.10.9"
   }
 }
