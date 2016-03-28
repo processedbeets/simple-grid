@@ -59,9 +59,9 @@ The option types will be shown after the option, follwed by  the default in roun
 - **markRowEdited** bool (*true*): similar to the *markCellEdited* option, but applies to an entire row. 
 - **newCellContent** string (*'-- New Row --'*): when adding a new row, by default, every cell will be assigned the *newCellContent* value. This can be prevented by editing the *newRowTemplate*.
 - **newRowTemplate** string[] (*undefined*): a string array of new cell values that must match the total number of available columns. *null* must be used for *checkbox* or *Delete* columns.
-    ```bash
-    newRowTemplate: ["", " {NEW ROW} ", "", null],
-    ```
+```bash
+newRowTemplate: ["", " {NEW ROW} ", "", null],
+```
 - **primaryKey** string (*undefined*): this works in conjunction with the 'data-id' attribute on the *<tbody><tr>* and is the name of a column that will be attached to the object returned by *EditedRows()*. This can be omitted if there is no intention of updating data or if the Primary Key is already included as a column in the table.
 - **readOnlyColumns** string[] (*undefined*): allows columns to be named as *readonly*. Alternatively, the *readonly* attribute can be added to the respective *<thead><th>* cell for that column.
 - **rowClickNewTab** bool (*true*): if a *<tbody><tr>* element has an *href* attribute set, this property indicates if clicking this row will open a new tab in the browser.
