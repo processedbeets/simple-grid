@@ -127,26 +127,18 @@ var table = $('#tableId').simpleGrid({
     }
 });
 ```
-* **show** bool (*true*): will the editableTable be active 
-* **definition** object:  
- * **callback** function (*undefined*): used in conjunction with the *url* property. This function will be called after a successful postback. Suggestions might involve some form of success toaster.
- * **columns** {string: string} (*undefined*): Marries up the column names with the column types
+- **show** bool (*true*): will the editableTable be active 
+- **definition** object:  
+	- **callback** function (*undefined*): used in conjunction with the *url* property. This function will be called after a successful postback. Suggestions might involve some form of success toaster.
+	- **columns** {string: string} (*undefined*): Marries up the column names with the column types
+	- **defaultOptions** object (*see below*)
+		- **cloneProperties** string[] (*['padding', 'padding-top', 'padding-bottom', 'padding-left', 'padding-right', 'text-align', 'font', 'font-size', 'font-family', 'font-weight']*): a list of CSS properties that will be cloned from the cell to the editor.
+		- **editor** string (*'&lt;input&gt;'*): the default editor shown if none are explicitly specified
+	- **editorsMaxWidth** bool (*true*): forces editors to consume the entire width of the cell. In some instances of larger screens and very few columns, column widths can be large, and the associated editors may exceed any max width set for that control type.
+	- **types** {object} (*undefined*):
+		- **column type** object (*undefined*): the object used to define a non-standard (non-textbox) editor for a column. This can be defined once and reused on multiple columns in the columns collection defined above.
+		- **type** string (*undefined*): by default, if a column has not been assigned a type, it will default to a standard html *input* or 'textbox'. Other types are available and must match these names, i.e. written in all lowercase. Additional properties specific to each type have been detailed below, however, when specifying these, they should be set at the same level as the type:
 ```javascript
-columns: {
-    "col1": "typeDate1",
-    "col2": "typeMultiline1",
-    "col14": "typeDate1"
-}
-```
-  * **defaultOptions** object (*see below*)
-   * **cloneProperties** string[] (*['padding', 'padding-top', 'padding-bottom', 'padding-left', 'padding-right', 'text-align', 'font', 'font-size', 'font-family', 'font-weight']*): a list of CSS properties that will be cloned from the cell to the editor.
-   * **editor** string (*'&lt;input&gt;'*): the default editor shown if none are explicitly specified
-  * **editorsMaxWidth** bool (*true*): forces editors to consume the entire width of the cell. In some instances of larger screens and very few columns, column widths can be large, and the associated editors may exceed any max width set for that control type.
-  * **types** {object} (*undefined*):
-   * **column type** object (*undefined*): the object used to define a non-standard (non-textbox) editor for a column. This can be defined once and reused on multiple columns in the columns collection defined above.
-    * **type** string (*undefined*): by default, if a column has not been assigned a type, it will default to a standard html *input* or 'textbox'. Other types are available and must match these names, i.e. written in all lowercase. Additional properties specific to each type have been detailed below, however, when specifying these, they should be set at the same level as the type:
-	
-...```javascript
     definition: {
         types: {
             "aType": {
