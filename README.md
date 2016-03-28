@@ -39,11 +39,11 @@ var table = $('.tableClass').simpleGrid();
 We can then bring in different modules to bring various pieces of functionality:
 
 - **dataTable**: This will give our tables full filtering, sorting, searching, paging, column visibility toggling , and exporting of data. It is recommended that this be activated to get the most out of simpleGrid. The default is for this to be `shown`.
-- **editableTable**: This gives us inline editing of cells (batch or single), deletion of rows, adding of rows, specialised column types such as `autocomplete`, `dropdown`, `multiline`, `dateTime`, and `text box`. Again, it is recommended that if you need editing, this be enabled. The default is for this to be `shown`.
+- **editableTable**: This gives us inline editing of cells (batch or single), deletion of rows, adding of rows, specialised column types such as `autocomplete`, `dropdown`, `multiline`, `dateTime`, and `textbox`. Again, it is recommended that if you need editing, this be enabled. The default is for this to be `shown`.
 -  **numericTable**: Disabled by default, this will provide some additional basic summation capabilities and validation on cells, rejecting any non-numeric characters. 
 
 ### Options
-The option types will be shown after the option, follwed by  the default in rounded brackets.
+- **propertyName** `type` (`default value`): description
 ##### SimpleGrid
 - **autoAddDeleteBtn** `bool` (`true`): by default, adding a new row, will add a Delete button to the Delete column.  
 - **addRowSelector** `string` (`'.addRow'`): in order to add a new row to the table, an element will have to contain this class.
@@ -95,7 +95,7 @@ hiddenRows: [
     ".class7"
 ]
 ```
-- **noFilters** `string[]` (`[]`): by default, column filters will be added to each column, not matching ["View", "Edit", "Delete"]. This option allows for additional columns to be excluded from the column filtering, i.e. no filter box will appear above that column.
+- **noFilters** `string[]` (`[]`): by default, column filters will be added to each column, not matching `["View", "Edit", "Delete"]`. This option allows for additional columns to be excluded from the column filtering, i.e. no filter box will appear above that column.
 - **orderColumns** `[[colName: "asc" | "desc"]]` (`[]`): an array of order arrays. Multiple order arrays can be specified. Data will first be sorted by the order specified in the orderColumns array, position zero. Additional sorting will be applied in turn, in the order specified in this array. In the abscence of this option, data will automatically be sorted by the column in position zero, in ascending order. 
 ```javascript
 orderColumns: [
@@ -113,7 +113,7 @@ selectFilters: [
 - **show** `bool` (`true`): will the dataTable be active 
 - **tableOnly** `bool` (`false`): this option is used in conjunction with `tableOnlyDef` and allows for a second 'table only' layout to be applied. This can strip everything such as paging, searching, and column visibility buttons from the layout. Only the table will be displayed.
 - **tableOnlyDef** `string` (`'t'`): In some instances you may wish to show only a table with paging. This can be achieved by setting this option and setting the `tableOnly` option to true. Please consult the [dataTables](https://datatables.net/reference/option/dom) documentation on details for setting the dataTables dom option.
-- **visibleColumns** `string[]` (`[]`): this is the inverse of the hiddenColumns option above. On occasion, the number of columns on a table may dictate it to be simpler to specify which columns are visible rather than which columns to hide, initially.
+- **visibleColumns** `string[]` (`[]`): this is the inverse of the `hiddenColumns` option above. On occasion, the number of columns on a table may dictate it to be simpler to specify which columns are visible rather than which columns to hide, initially.
 
 ##### EditableTable
 ###### Example
@@ -170,7 +170,7 @@ var table = $('#tableId').simpleGrid({
 				- **fixedDayOfMonth** `int` (`undefined`) [1-31]: allows a specific day to be always be chosen for a given month. For example always picking the 1st of the month chosen.
 				- **timePicker** `bool` (`false`): toggles time picking component of date picker
 			- **dropdown** (`<select>`)
-				- **source** `object` | `string[]` (`undefined`): For an object, each element should be of the form "Id": "Display Value". This will create an html `select` element, with each option's `value` attribute being assigned the *"Id"* property name and the option contents being assigned the *"Display Value"*. A string array can also be accepted. This will assign the value attribute the index position in the array (zero-based index). The option contents will be assigned to the array text value. 
+				- **source** `object` | `string[]` (`undefined`): For an object, each element should be of the form `"Id": "Display Value"`. This will create an html `select` element, with each option's `value` attribute being assigned the *"Id"* property name and the option contents being assigned the *"Display Value"*. A string array can also be accepted. This will assign the value attribute the index position in the array (zero-based index). The option contents will be assigned to the array text value. 
 					- **object**					
 `
 {
@@ -237,7 +237,7 @@ var table = $('#tableId').simpleGrid({
     - **initTotals** `bool` (`false`): preCalculates the totals on all `totalColumns` and footers. If you already have totals precalculated this can be left switched off.
     - **maxTotalPerTotalColumn** `int` (`99999`): dictates the maximum value accepted in `totalColumns`. If this value is exceeded, the `deletedClass` will be added to the `<td>`.
     - **maxValue** `int` (`99999`):  dictates the maximum value accepted for a single editable cell.  If this value is exceeded, the entry will be rejected.
-    - **totalColumnClass** `string` (`totalCol`): a class used on the `<thead><th>` elements to denote columns that should be treated as total columns. A total column is one that is readonly and sums the contents of the row (excluding any excludeColumns) between either the beginning of the row, or from the last totalColumn if another appears closer towards the left hand side.
+    - **totalColumnClass** `string` (`totalCol`): a class used on the `<thead><th>` elements to denote columns that should be treated as total columns. A total column is one that is `readonly` and sums the contents of the row (excluding any `excludeColumns`) between either the beginning of the row, or from the last `totalColumn` if another appears closer towards the left hand side.
 
 ### Methods
 
