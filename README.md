@@ -148,6 +148,13 @@ var table = $('#tableId').simpleGrid({
 - **definition** object:  
 	- **callback** function (*undefined*): used in conjunction with the *url* property. This function will be called after a successful postback. Suggestions might involve some form of success toaster.
 	- **columns** {string: string} (*undefined*): Marries up the column names with the column types
+	`
+		columns: {
+			"col1": "typeDate1",
+			"col2": "typeMultiline1",
+			"col14": "typeDate1"
+		}
+	`
 	- **defaultOptions** object (*see below*)
 		- **cloneProperties** string[] (*['padding', 'padding-top', 'padding-bottom', 'padding-left', 'padding-right', 'text-align', 'font', 'font-size', 'font-family', 'font-weight']*): a list of CSS properties that will be cloned from the cell to the editor.
 		- **editor** string (*'&lt;input&gt;'*): the default editor shown if none are explicitly specified
@@ -171,9 +178,7 @@ var table = $('#tableId').simpleGrid({
     "3": "Value 3"
 }
 `
-
-					- **string[]**
-					
+					- **string[]**					
 `
 [
     "Value 1",
@@ -181,12 +186,11 @@ var table = $('#tableId').simpleGrid({
     "Value 3"
 ]
 `
-
 				- **sort** dropdownSort (*dropdownSort.TEXT*) [NONE | ID | TEXT]: used to specify the order that options within the select will be sorted.
 			- **multiline** (*&lt;textarea&gt;*)
 	- **url** string (*undefined*):  URL accepting an Ajax HTTP POST. Allows for immediate posting of each cell update, as it is made. An object is constructed using the *name* attribute of the *&lt;td&gt;* or respective *&lt;thead&gt;&lt;th&gt;* cell as a property and the value being assigned the trimmed text contents of the cell. In addition, any data attributes are serialised and included.
 	
-```javascript
+```html
 <td name="percentage"
     data-projectid="4"
     data-personid="5">
