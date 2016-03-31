@@ -1,0 +1,68 @@
+﻿@import "../app/variables.less";
+
+.button {
+    overflow: auto;
+    text-align: right;
+    display: inline-block;
+    white-space: pre-wrap;
+    font-size: large;
+    padding: 7px 7px;
+    vertical-align: middle;
+    margin: 0 2px;
+    text-decoration: none !important;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.button-emphasis {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px @body-bg;
+    outline: thick auto @body-bg;
+}
+
+
+.button:hover {
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.button-submit {
+    float: right;
+    border-color: @highlight;
+    /*background-color: rgba(241, 196, 15, 0.8);*/
+}
+
+// Inverse Button
+.btn-inverse {
+  .button-variant(@btn-inverse-color; @btn-inverse-bg; @btn-inverse-border);
+}
+
+.btn-group-justified {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+#reloadWindow {
+    display: none; 
+    float: right;
+}
+
+.filter-active {
+    color: @highlight;
+    font-size: large;
+    border-width: thick;
+    border-color: @highlight;
+}
+
+.btn-default {
+    color: @blue;
+    background-color: @white;
+}
+
+.btn-default.active {
+    color: @white;
+    background-color: @blue;
+}

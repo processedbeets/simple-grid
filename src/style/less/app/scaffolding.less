@@ -1,0 +1,43 @@
+﻿@import "../app/variables.less";
+
+body {
+    padding-top: 50px;
+    background: url('../images/bg.jpg') top center repeat, #fff;
+    position: relative;
+}
+
+.pad-right-15 {
+    padding-right: 15px;
+}
+
+.pad-top-15 {
+    padding-top: 15px;
+}
+
+.relative {
+    position: relative;
+}
+
+.inline {
+    display: inline-block !important;
+}
+
+input::selection,
+textarea::selection,
+select::selection {
+    background: @readonly;
+}
+
+input::-moz-selection,
+textarea::-moz-selection,
+select::-moz-selection {
+    background: @readonly;
+}
+
+::selection {
+    background: @highlight; /*#ffb7b7; /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+    background: @highlight; /*#ffb7b7; /* Gecko Browsers */
+}

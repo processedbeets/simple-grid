@@ -2,6 +2,7 @@
   "name": "simple-grid",
   "dependencies": {
     "jquery": "~2.1.4",
-    "datatables": "~1.10.9"
+    "datatables": "~1.10.9",
+    "font-awesome": "fontawesome#~4.5.0"
   }
 }
