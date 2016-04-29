@@ -360,11 +360,12 @@
                     if ($(evt.target).is('a') || typeof $(this).attr('href') !== 'string') {
                         return;
                     }
-
-                    if (options.rowClickNewTab) {
-                        window.open($(this).attr('href'), '_blank');
-                    } else {
-                        window.location.href = $(this).attr('href');
+                    if ($(this).attr('href')) {
+                        if (options.rowClickNewTab) {
+                            window.open($(this).attr('href'), '_blank');
+                        } else {
+                            window.location.href = $(this).attr('href');
+                        }
                     }
                 }
             }
