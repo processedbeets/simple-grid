@@ -619,7 +619,11 @@
             else if (options.markRowEdited) {
                 editSelector = $tbl.find('tbody tr.' + options.editedClass).not('.' + options.deletedClass);
             }
-
+            
+            $tbl.search( '' )
+                .columns().search( '' )
+                .draw();
+                
             var editOnly = getEditedCollection($tbl, editSelector, false, options, wrapperObject, editors),
                 deleteOnly = getEditedCollection($tbl, deleteSelector, true, options, wrapperObject, editors);
 
