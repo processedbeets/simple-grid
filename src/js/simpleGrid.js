@@ -737,7 +737,7 @@
                 orderClasses: false,
                 pagingType: "full_numbers",
                 buttons: [
-                    'colvis', 'copy', 'csv', 'excel', { extend: 'pdfHtml5', orientation: 'landscape' }
+                    'colvis', 'copy', 'csv', 'excel'
                 ],
                 "columnDefs": [
                     {
@@ -781,7 +781,7 @@
                                 var select = $('<select class="form-control"><option value=""></option></select>')
                                     .appendTo($(column.footer()).empty())
                                     .on('change', function () {
-                                        column.search($(this).val());
+                                        column.search($(this).val(), false, false);
                                         if (dataTableOptions.definition.serverSide) {
                                             dataTable.ajax.reload();
                                         } else {
@@ -800,8 +800,7 @@
                                 $('<input class="form-control table-filters" type="text" />')
                                     .appendTo($(column.footer()).empty())
                                     .on('keyup change', function () {
-                                        column.search($(this).val(), false);
-
+                                        column.search($(this).val(), false, false);
                                         if (dataTableOptions.definition.serverSide) {
                                             dataTable.ajax.reload();
                                         } else {
